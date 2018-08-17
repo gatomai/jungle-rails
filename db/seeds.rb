@@ -30,6 +30,9 @@ cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
 
 ## PRODUCTS
+# prod1 = Product.find_or_create_by! name: 'Hipster Socks'
+
+
 
 puts "Re-creating Products ..."
 
@@ -131,6 +134,20 @@ cat3.products.create!({
   quantity: 0,
   price: 2_483.75
 })
+
+# prod1.reviews.create!({
+#   product_id:  1,
+#   user_id: 2,
+#   description: Faker::ChuckNorris.fact,
+#   rating: 3
+# })
+
+# prod1.reviews.create!({
+#   product_id:  2,
+#   user_id: 2,
+#   description: Faker::ChuckNorris.fact,
+#   rating: 4
+# })
 
 
 puts "DONE!"
