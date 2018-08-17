@@ -7,4 +7,11 @@ class Order < ActiveRecord::Base
 
   validates :stripe_charge_id, presence: true
 
+  after_create :send_email_to_customer
+
+  def send_email_to_customer
+    UserMailer.order_confirmation(self).deliver
+  end
+
+
 end
