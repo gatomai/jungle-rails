@@ -1,0 +1,22 @@
+<% if product = Product.find_by(id: li.product_id) %>
+  <% @cart_total += li.item_price_cents %>
+
+  <tr>
+    <td>
+      <%= image_tag product.image.tiny %>
+    </td>
+    <td>
+      <h4><%= product.name %></h4>
+      <br>
+    </td>
+    <td>
+      <%= product.price %>
+    </td>
+        <td>
+      <%= li.quantity %>
+    </td>
+    <td>
+      <%= li.item_price_cents %>
+    </td>
+  </tr>
+<% end %>
