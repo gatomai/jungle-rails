@@ -22,9 +22,23 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
-              <div class="reviews">
-              <%= render @product.reviews %>
-              </div>    
+          <div class="reviews">
+          <%= render @product.reviews %>
+          </div>
+          <% if current_user %>
+          <hr>
+          <div class=""row">
+          <h3> class="review-header">Write a review</h3>
+          <%= form_for [@product, @review], url: `products/#{@product.id}/reviews` do |f|>
+          <div class="form-fields"> Provide a Rating: <%=f.select :rating, %w{1 2 3 4 5 },{:prompt => "Rate"},
+          {:required => true} %></div>
+          <div class="form-fields">Write your review: <%=f.text_area :description, :required => true %></div>
+          <br>
+          <div vlass="form-fields"><%= f.submit "Submit Review" %></div>
+          <% end %>
+          </div>
+          <% end %>
+
         </dl>
       </div>
     </div>
