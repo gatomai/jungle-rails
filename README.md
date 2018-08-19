@@ -36,7 +36,7 @@ open http://localhost:3000
 --##MAIN SCREEN##--
 ![Main Screen](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-MainScreen.png)
 
---##Sold out Badge##--
+--##Sold out Badge##--<br/>
 ![Sold Out Badge](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-SOLD-OUT-Badge.png)
 
 --##New Category##--
