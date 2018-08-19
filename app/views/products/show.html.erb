@@ -59,7 +59,7 @@
           <dd>Review: <%=review.description %> </dd>
           <% if current_user == User.find(review.user_id) %>
           <br>
-          <%= link_to 'Destroy',
+          <%= link_to 'Delete',
                       product_review_path(review.product_id, review.id), 
                       method:  :delete, 
                       data: { confirm: 'Are you sure?' },

@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @cart_total = 0 %>
+        <% @cart_total = 0.0 %>
         <% @order.line_items.each do |li| %>
           <%= render 'line_item', li: li %>
         <% end %>
@@ -30,10 +30,10 @@
       <tfoot>
         <tr>
           <th colspan="4">
-            TOTAL:
+            GRAND TOTAL:
           </th>
           <th>
-            <%= @cart_total.to_i/100 %>
+            <%= @cart_total/100 %>
           </th>
         </tr>
       </tfoot>
