@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :delete_review, :only => [:destroy]
+
   def create
     @review = Review.new(review_params)
     @review.user = current_user
@@ -8,6 +10,15 @@ class ReviewsController < ApplicationController
     else
         redirect_to product_path(params[:product_id])
     end
+  end
+
+  def destroy
+    @delete.destroy
+    redirect_to product_path(@delete.product_id)
+  end
+
+  def delete_review
+    @delete = Review.find(params[:id])
   end
 
   def review_params

@@ -4,7 +4,20 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
+   <% order_total = 0 %> 
     <h1>Congratulations, your order<%= @order.id %> was placed</h1>
-    <p>Thanks for joining and have a great day!</p>
+    <h2>Here are the details of your order<h2>
+    <% @order_items.each do |item| %>
+    Product: <%= item.product.name %>
+    Description: <%= item.product.description %>
+    Item Price: <%= item.product.price.to_i %>
+    Quantity: <%= item.quantity %>
+    Total Price: <%= item.total_price.to_i %>
+    <% end %>
+    <% @order_items.each do |item| %>
+    <% order_total += item.total_price %>
+    <% end %>
+    <h4> Your grand total today is <%= order_total.to_i %> </h4>
+    <p>Thanks for purchasing and have a great day!</p>
   </body>
 </html>

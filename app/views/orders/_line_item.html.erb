@@ -10,13 +10,13 @@
       <br>
     </td>
     <td>
-      <%= product.price %>
+      <%= product.price.to_i %>
     </td>
         <td>
       <%= li.quantity %>
     </td>
     <td>
-      <%= li.item_price_cents %>
+      <%= li.item_price_cents.to_i/100 %>
     </td>
   </tr>
 <% end %>

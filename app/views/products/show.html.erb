@@ -1,7 +1,10 @@
 <section class="products-show">
 
   <header class="page-header">
-    <h1><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name %></h1>
+    <h1>
+      <%= link_to @product.category.name, @product.category %> &raquo;
+        <%= @product.name %>
+    </h1>
   </header>
 
   <article class="product-detail">
@@ -14,31 +17,60 @@
 
       <div class="col-sm-8">
         <dl class="dl-horizontal">
-        <dt>Name</dt>
-          <dd><%= @product.name %></dd>
+          <dt>Name</dt>
+          <dd>
+            <%= @product.name %>
+          </dd>
           <dt>Description</dt>
-          <dd><%= @product.description %></dd>
+          <dd>
+            <%= @product.description %>
+          </dd>
           <dt>Quantity</dt>
-          <dd><%= @product.quantity %></dd>
+          <dd>
+            <%= @product.quantity %>
+          </dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+          <dd>
+            <%= @product.price %>
+          </dd>
           <div class="reviews">
-          <%= render @product.reviews %>
+            <%= render @product.reviews %>
           </div>
           <% if current_user %>
-          <hr>
-          <div class=""row">
-          <h3 class="review-header">Write a review</h3>
+            <hr>
+            <div class="" row ">
+          <h3 class="review-header ">Write a review</h3>
           <%= form_for [@product, @review], url: `products/#{@product.id}/reviews` do |f| %>
-          <div class="form-fields"> Provide a Rating: <%=f.select :rating, %w{1 2 3 4 5 },{:prompt => "Rate"},
+          <div class="form-fields "> Provide a Rating: <%=f.select :rating, %w{1 2 3 4 5 },{:prompt => "Rate "},
           {:required => true} %></div>
-          <div class="form-fields">Write your review: <%=f.text_area :description, :required => true %></div>
+          <div class="form-fields ">Write your review: <%=f.text_area :description, :required => true %></div>
           <br>
-          <div vlass="form-fields"><%= f.submit "Submit Review" %></div>
+          <div vlass="form-fields "><%= f.submit "Submit Review " %></div>
           <% end %>
           </div>
           <% end %>
-
+          <div class="sorted-rows ">
+          <hr>
+          <% if @sort_reviews.size > 0 %>
+          <h3 class="review-header "> Reviews for this product </h3>
+          <% @sort_reviews.each do |review| %>
+          <dd>Rating: <%=review.rating %> /5 </dd>
+          <br>
+          <dd>Review: <%=review.description %> </dd>
+          <% if current_user == User.find(review.user_id) %>
+          <br>
+          <%= link_to 'Destroy',
+                      product_review_path(review.product_id, review.id), 
+                      method:  :delete, 
+                      data: { confirm: 'Are you sure?' },
+                      class: 'btn btn-sm btn-danger' %>
+          <% end %>
+          <hr>
+          <% end %>
+          <% elsif @sort_reviews.length == 0 && current_user %>
+          <h4> There are no reviews for this product yet !! <h4>
+          <% end %>
+          </div>
         </dl>
       </div>
     </div>

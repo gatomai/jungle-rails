@@ -3,6 +3,7 @@ class UserMailer < ApplicationMailer
 
   def order_confirmation(order)
     @order = order
-    mail(to: order.email, subject: 'Order has been received')
+    @order_items = order.line_items
+    mail(to: @order.email, subject: 'Order has been received')
   end
 end
