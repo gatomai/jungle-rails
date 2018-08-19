@@ -33,8 +33,13 @@ bin/rails s -b 0.0.0.0
 open http://localhost:3000
 ```
 ### Final Product Screenshots
+--##MAIN SCREEN##--
 ![Main Screen](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-MainScreen.png)
+
+--##Sold out Badge##--
 ![Sold Out Badge](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-SOLD-OUT-Badge.png)
+
+--##New Category##--
 ![New Category](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-NewCategory.png)
 ![Before Adding Reviews](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-NoReviewsProduct.png)
 ![Posting a Review](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot%20-PostingReview.png)
