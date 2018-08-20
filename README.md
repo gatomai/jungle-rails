@@ -1,23 +1,14 @@
-# Jungle
+# Overview of Jungle
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+# Stack:
 
-## Setup
-
-1. Fork & Clone
-2. Run `bundle install` to install dependencies
-3. Create `config/database.yml` by copying `config/database.example.yml`
-4. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-5. Run `bin/rake db:reset` to create, load and seed db
-6. Create .env file based on .env.example
-7. Sign up for a Stripe account
-8. Put Stripe (test) keys into appropriate .env vars
-9. Run `bin/rails s -b 0.0.0.0` to start the server
+Ruby on Rails
 
 ## Stripe Testing
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+Please use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
@@ -26,3 +17,42 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+### Usage
+Clone the repository.
+
+```
+git clone git@github.com:gatomai/jungle-rails.git
+```
+
+Install the dependencies and start the server.
+
+```
+bundle install
+bin/rails s -b 0.0.0.0
+open http://localhost:3000
+```
+### Final Product Screenshots
+--##MAIN SCREEN##--<br/>
+![Main Screen](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-MainScreen.png)
+
+--##Sold out Badge##--<br/>
+![Sold Out Badge](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-SOLD-OUT-Badge.png)
+
+--##New Category##--<br/>
+![New Category](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-NewCategory.png)
+
+--##Before Adding a Review##--<br/>
+![Before Adding Reviews](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-NoReviewsProduct.png)
+
+--##Posting a Review##--<br/>
+![Posting a Review](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot%20-PostingReview.png)
+
+--##Adding another Review##--<br/>
+![Posting more Reviews](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-PostingReviews.png)
+
+--##Delete a Review##--<br/>
+![Delete Review](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-DeleteReview.png)
+
+--##Placing a successful Order##--<br/>
+![Placing Successful Order](https://github.com/gatomai/jungle-rails/blob/master/blob/Screenshot-SuccessfulOrder.png)
