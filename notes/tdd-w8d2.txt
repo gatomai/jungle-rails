@@ -1,0 +1,26 @@
+Notes:
+
+Testing Pyramid
+
+TDD
+
+GEL file - 
+gem 'pry'
+byebug
+rspec-rails
+faker
+factory_bot_rails
+database_cleaner
+
+bin/rails g rspec:install
+bin/rails g rspec:feature SimpleCruds
+
+Write User Stories as seen by the User. UML.
+Test on the content and not the markup
+
+type: :request tests the view as well
+
+visit
+click_link
+fill_in : , with: 
+expect(page) to have 

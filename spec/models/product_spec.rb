@@ -36,8 +36,6 @@ RSpec.describe Product, type: :model do
       expect(prod.errors.full_messages).to eq(["Category can't be blank"])
     end
 
-      # prod.name = 'Hipster Mouse'
-      # prod.valid?prod.errors[:name].should_not include("can't be blank")
   end
 end
 
